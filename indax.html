@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./indax.css">
+</head>
+<body>
+    <div class="h">EMPLOYEE MANAGEMENT SYSTEM</div>
+<div style="text-align:center;margin:10px" id="dateTime"></div>
+<div style="text-align:center;color:blue" id="loadingMsg">Loading employees...</div>
+
+<div class="row">
+  <input type="text" id="searchInput" placeholder="Search Employee: [____]">
+  <button onclick="searchEmployees()">Search</button>
+</div>
+
+<div class="row">
+  <button onclick="filterDepartment('All')">[All Employees]</button>
+  <button onclick="filterDepartment('IT')">[IT]</button>
+  <button onclick="filterDepartment('HR')">[HR]</button>
+  <button onclick="filterDepartment('Finance')">[Finance]</button>
+  <button onclick="filterDepartment('Marketing')">[Marketing]</button>
+  <button onclick="sortEmployees('nameAsc')">Name ↑</button>
+  <button onclick="sortEmployees('nameDesc')">Name ↓</button>
+  <button onclick="sortEmployees('age')">Sort by Age</button>
+  <button onclick="sortEmployees('salary')">Sort by Salary</button>
+</div>
+
+<div class="box" id="countBox">Employee Count: 0</div>
+<div class="box" id="salaryBox">Total Salary: ₹0 | Average: ₹0</div>
+<div class="box" id="highestBox">Highest Paid Employee: -</div>
+
+<div id="employeeContainer"></div>
+
+<div class="h" style="margin-top:20px">ADD EMPLOYEE<br><br>
+  Name: <input id="empName"><br><br>
+  Age: <input id="empAge" type="number"><br><br>
+  Email: <input id="empEmail"><br><br>
+  Department:
+  <select id="empDept">
+    <option value="">Select</option>
+    <option value="IT">IT</option>
+    <option value="HR">HR</option>
+    <option value="Finance">Finance</option>
+    <option value="Marketing">Marketing</option>
+  </select><br><br>
+  Salary: <input id="empSalary" type="number" placeholder="50000"><br><br>
+  <p id="errorMsg" style="color:red"></p>
+  <button onclick="addEmployee()">Add Employee</button>
+
+</div>
+
+
+
+
+
+
+
+    <script src="./script.js"></script>
+</body>
+</html>
